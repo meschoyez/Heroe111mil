@@ -13,3 +13,5 @@
 *.blg
 *.dvi
 *.ps
+/nbproject/private/
+/build/
