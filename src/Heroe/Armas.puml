@@ -1,0 +1,38 @@
+@startuml Armas
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+class Armas <<abstract>> {
+    - Integer alcance
+    - Integer danio
+    + Atacar ()
+    + RecargarArma (Objetos obj)
+}
+
+class Espada {
+}
+
+class Cuchillo {
+}
+
+class Onda {
+}
+
+class Hacha {
+}
+
+class Maza {
+}
+
+class Ballesta {
+}
+
+Armas <|-- Espada
+Armas <|-- Cuchillo
+Armas <|-- Maza
+Armas <|-- Ballesta
+Armas <|-- Onda
+Armas <|-- Hacha
+
+@enduml
