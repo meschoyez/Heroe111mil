@@ -1,0 +1,15 @@
+*~
+#*
+*.log
+*.aux
+*.out
+*.nav
+*.snm
+*.vrb
+*.toc
+*.class
+*.pdf
+*.bbl
+*.blg
+*.dvi
+*.ps
