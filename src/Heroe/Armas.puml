@@ -28,6 +28,12 @@ class Maza {
 class Ballesta {
 }
 
+class Objetos <<abstract>> {
+    + Integer peso
+    + String nombre
+}
+
+Objetos <|-- Armas
 Armas <|-- Espada
 Armas <|-- Cuchillo
 Armas <|-- Maza
