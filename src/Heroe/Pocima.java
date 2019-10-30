@@ -6,14 +6,16 @@
 package Heroe;
 
 /**
- *
+ * Esta clase modela una pocima que se
+ * usa con las botellas.
+ * 
  * @author meschoyez
  */
 public class Pocima extends Liquido {
 
     public Pocima() {
-        setNombre("Pocima");
-        setPeso(15);
+        super.setNombre("Pocima");
+        super.setPeso(15);
     }
     
 }
