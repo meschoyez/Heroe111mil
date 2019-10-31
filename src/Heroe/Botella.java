@@ -18,14 +18,10 @@ public class Botella extends Objetos {
      * 
      */
     public void LlenarBotella (Liquido l) throws ContenedorLlenoException {
-        if (isVacia()) {
-            setContenido(l);
-            GenerarNombre();
-            setPeso(getContenido().getPeso() + PESO_PROPIO);
-        }
-        else {
-            throw new ContenedorLlenoException ("Botella llena");
-        }
+        isVacia();
+        setContenido(l);
+        GenerarNombre();
+        setPeso(getContenido().getPeso() + PESO_PROPIO);
     }
 
     /**
@@ -46,11 +42,11 @@ public class Botella extends Objetos {
      * "Botella vacia"
      */
     public void GenerarNombre () {
-        if (getContenido() == null) {
-            setNombre("Botella vacia");
-        }
-        else {
+        try {
             setNombre("Botella con " + getContenido().getNombre());
+        }
+        catch (NullPointerException e) {
+            setNombre("Botella vacia");
         }
     }
 
@@ -58,11 +54,14 @@ public class Botella extends Objetos {
      * Devuelve verdadero o falso segun tenga o no contenido.
      * @return true en caso de estar vacia
       */
-    public Boolean isVacia () { 
-        if (getContenido() == null) {
-            return true;
+    public Boolean isVacia () {
+        try {
+            getContenido().getNombre();
+            throw new ContenedorLlenoException("Botella con contenido");
         }
-        return false;
+        catch (NullPointerException e) {
+        }
+        return true;
     }
 
     /**
