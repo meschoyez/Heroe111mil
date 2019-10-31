@@ -13,8 +13,8 @@ public class Hacha extends Armas {
     
     public Hacha () {
     
-        super.setAlcance(5);
-        super.setDanio(20);
+        super.setAlcance(50);
+        super.setDanio(30);
         
         
     }
