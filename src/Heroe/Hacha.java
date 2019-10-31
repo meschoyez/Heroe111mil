@@ -12,8 +12,9 @@ package Heroe;
 public class Hacha extends Armas {
     
     public Hacha () {
-    
-       
+        
+        super.setNombre("Hacha");
+        super.setPeso(3);
         super.setAlcance(5);
         super.setDanio(20);
         
