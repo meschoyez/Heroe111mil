@@ -18,7 +18,14 @@ public class Botella extends Objetos {
      * 
      */
     public void LlenarBotella (Liquido l) throws ContenedorLlenoException {
-        // Completar metodo
+        if (isVacia()) {
+            setContenido(l);
+            GenerarNombre();
+            setPeso(getContenido().getPeso() + PESO_PROPIO);
+        }
+        else {
+            throw new ContenedorLlenoException ("Botella llena");
+        }
     }
 
     /**
@@ -27,7 +34,9 @@ public class Botella extends Objetos {
      * Genera el nuevo nombre de la botella.
      */
     public void VaciarBotella () {
-        // Completar metodo
+        setContenido(null);
+        setPeso(PESO_PROPIO);
+        GenerarNombre();
     }
 
     /**
@@ -37,7 +46,12 @@ public class Botella extends Objetos {
      * "Botella vacia"
      */
     public void GenerarNombre () {
-        // Completar metodo
+        if (getContenido() == null) {
+            setNombre("Botella vacia");
+        }
+        else {
+            setNombre("Botella con " + getContenido().getNombre());
+        }
     }
 
     /**
@@ -45,8 +59,10 @@ public class Botella extends Objetos {
      * @return true en caso de estar vacia
       */
     public Boolean isVacia () { 
-        // Completar metodo
-        throw new IllegalStateException ();
+        if (getContenido() == null) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -55,6 +71,16 @@ public class Botella extends Objetos {
      * @return true en caso de contener algun tipo de elixir
       */
       public Boolean hasElixir () {
+        // Completar metodo
+        throw new IllegalStateException ();
+    }
+
+    /**
+     * Devuelve verdadero en caso de contener algun tipo de pocima
+     * y falso si esta vacia o contiene otro tipo de liquido.
+     * @return true en caso de contener algun tipo de elixir
+      */
+      public Boolean hasPocima () {
         // Completar metodo
         throw new IllegalStateException ();
     }
