@@ -9,36 +9,36 @@ package Heroe;
  *
  * @author Fede
  */
-public class Honda {
+public class Honda extends Armas {
     
-    
+    private int PESO_HONDA = 2;
     private int AlcancePiedraPequeña;
     private int AlcancePiedraMediana;
     private int AlcancePiedraGrande;
     private Piedra piedra;
     
     
-
-    public Honda() {
-        setAlcancePiedraPequeña(15);
-        setAlcancePiedraMediana(10);
-        setAlcancePiedraGrande(5);
-    }
+    public Honda() throws PiedraNoDisponibleException {
+        
+        setNombre("Honda");
+        setPeso(PESO_HONDA);
+        setAlcance(piedra.Alcance());
+        setDanio(piedra.Daño());
+        
+     }
     
     public Piedra CargarHonda() throws PiedraNoDisponibleException{
         
         if (piedra.equals(piedra.getPiedraPequeña())) {
-            
-            piedra = piedra.getPiedraPequeña();
+            setPeso(piedra.PesoPiedra()+ PESO_HONDA);
             return piedra;
             
         }else if (piedra.equals(piedra.getPiedraMediana())) {
-            
-            piedra = piedra.getPiedraMediana();
+            setPeso(piedra.PesoPiedra()+ PESO_HONDA);
             return piedra;
-        }else if (piedra.equals(piedra.getPiedraGrande())) {
             
-            piedra = piedra.getPiedraGrande();
+        }else if (piedra.equals(piedra.getPiedraGrande())) {
+            setPeso(piedra.PesoPiedra()+ PESO_HONDA);
             return piedra;
             
         }else{
@@ -46,32 +46,6 @@ public class Honda {
         }
     
        
-    }
-    
-    public Piedra ArrojarPiedra() throws PiedraNoDisponibleException{
-        
-        if (piedra.equals(piedra.getPiedraPequeña())) {
-            
-            piedra.getDañoPiedraPequeña();
-            getAlcancePiedraPequeña();
-            return piedra.getPiedraPequeña();
-            
-        } else if (piedra.equals(piedra.getPiedraMediana())) {
-            
-            piedra.getDañoPiedraMediana();
-            getAlcancePiedraMediana();
-            return piedra.getPiedraMediana();
-            
-        } else if (piedra.equals(piedra.getPiedraGrande())) {
-            
-            piedra.getDañoPiedraGrande();
-            getAlcancePiedraGrande();
-            return piedra.getPiedraGrande();
-            
-        } else {
-            throw new PiedraNoDisponibleException("No tiene piedras disponibles.");
-        }
-        
     }
 
     public int getAlcancePiedraPequeña() {
@@ -96,6 +70,16 @@ public class Honda {
 
     public void setAlcancePiedraGrande(int AlcancePiedraGrande) {
         this.AlcancePiedraGrande = AlcancePiedraGrande;
+    }
+
+    @Override
+    public void Atacar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void RecargarArma(Objetos obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
