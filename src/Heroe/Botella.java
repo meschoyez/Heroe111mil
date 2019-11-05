@@ -101,7 +101,14 @@ public class Botella extends Objetos {
       */
       public Boolean hasVino () {
         // Completar metodo
-        throw new IllegalStateException ();
+        boolean tieneVino = false;
+
+        if (getNombre().equals("Vino") ) {
+            tieneVino = true;
+        }
+            return tieneVino;
+
+        //throw new IllegalStateException ();
     }
   
     public Liquido getContenido() {
