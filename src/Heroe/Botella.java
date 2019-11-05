@@ -81,7 +81,12 @@ public class Botella extends Objetos {
       */
       public Boolean hasPocima () {
         // Completar metodo
-        throw new IllegalStateException ();
+        boolean tienePocima = false;
+
+        if (getNombre().equals("Pocima") ) {
+            tienePocima = true;
+        }
+            return tienePocima;
     }
 
     /**
@@ -108,7 +113,6 @@ public class Botella extends Objetos {
         }
             return tieneVino;
 
-        //throw new IllegalStateException ();
     }
   
     public Liquido getContenido() {
