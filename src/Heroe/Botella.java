@@ -54,7 +54,7 @@ public class Botella extends Objetos {
      * Devuelve verdadero o falso segun tenga o no contenido.
      * @return true en caso de estar vacia
       */
-    public Boolean isVacia () {
+    public Boolean isVacia () throws ContenedorLlenoException {
         try {
             getContenido().getNombre();
             throw new ContenedorLlenoException("Botella con contenido");
