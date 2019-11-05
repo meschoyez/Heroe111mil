@@ -95,8 +95,12 @@ public class Botella extends Objetos {
      * @return true en caso de contener agua
       */
       public Boolean hasAgua () {
-        // Completar metodo
-        throw new IllegalStateException ();
+        boolean tienePocima = false;
+
+        if (getNombre().equals("Pocima") ) {
+            tienePocima = true;
+        }
+            return tienePocima;
     }
   
     /**
